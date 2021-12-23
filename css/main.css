@@ -1,0 +1,401 @@
+*{margin: 0; padding: 0}
+ul{list-style: none;}
+a{text-decoration: none; color: #fff;}
+body{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  line-height: 23px;
+  color: #fff;
+  background-color: #000;
+}
+/*header 시작*/
+#header{
+ height: 265px;
+ width: 100%;
+ position: absolute; /*헤더를 공중에 띄워야 box1에 백그라운드를 넣엇을때 헤더가 보임*/
+ top: 0;
+ left: 0;
+}
+.header_bor{
+  height: 265px;
+  border-bottom: 3px solid #5a5a5a;
+}
+.header_inner{ /*1320px*/
+  width: 1320px;
+  margin: auto;
+  padding-top: 58px;
+  position: relative;
+}
+.header_inner h1{ /*logo*/
+  display: block;
+  text-align: center;
+}
+.header_icon{
+  position: absolute;
+  top: 85px;
+  right: 11px;
+  opacity: 0.7;
+}
+.header_icon:hover{
+  transform: scale(1.2);
+  opacity: 1;
+}
+/*메뉴*/
+.nav{
+  width: 1320px;
+}
+.nav li a{
+  display: block;
+  width: 25%;
+  float: left;
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px 0px;
+  font-weight: 500;
+}
+.nav li a:hover{
+  color: #e6a725;
+}
+
+/*box1*/
+#box1{
+  background: url(../images/1-bgl.jpg) no-repeat center top; /*이미지가 box1에 있어야 문이랑 글고정됨*/
+  height: 1000px; /*920 에서 1000으로 바꿈*/
+  animation: bg1 4s linear infinite;
+  display: block;
+}
+@keyframes bg1{
+  0% {background: url(../images/1-bgl.jpg) no-repeat center top;}
+  50% {background: url(../images/1-bgr.jpg) no-repeat center top;}
+  100% {background: url(../images/1-bgl.jpg)
+  no-repeat center top;}
+}/*백그라운드 연기 애니메이션*/
+.box1_inner{
+  width: 1320px;
+  margin: auto;
+  position: relative;
+}
+/*icon_top 버튼 시작*/
+.icon_top{position:fixed; bottom:50px; right:50px; display:none;}
+.icon_top:hover{
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.2);
+  border-radius: 50%;
+}
+/*icon_top 버튼 끝*/
+.door{
+  width: 1039px;
+  height: 485px;
+  position: absolute;
+  top: 380px;
+  left: 155px;
+  background: url(../images/door0.png) no-repeat center top;
+  opacity: 0.8;
+  animation: door 5s 1.5s linear forwards;
+}/*문 5초동안열림 1초뒤에 같은속도로 마지막화면고정*/
+@keyframes door{
+  0% {background: url(../images/door0.png) no-repeat center top;}
+  20% {background: url(../images/door20.png) no-repeat center top;}
+  40% {background: url(../images/door40.png) no-repeat center top;}
+  60% {background: url(../images/door60.png) no-repeat center top;}
+  80% {background: url(../images/door80.png) no-repeat center top;}
+  100% {background: url(../images/door100.png) no-repeat center top;}
+}/*문 애니메이션*/
+.box1_inner .exit_on{
+  position: absolute;
+  top: 365px;
+  left: 380px;
+}
+.box1_inner .exit_off{
+  position: absolute;
+  top: 365px;
+  left: 380px;
+  animation: exit_off 0.5s linear infinite alternate;/*alternate 1에서0갓다가 0에서 1갓다가*/
+}
+.box1_inner .text1{
+  position: absolute;
+  top: 380px;
+  right: 350px;
+  opacity: 0;
+  animation: text1 10s 1.5s linear forwards; /*forwards 마지막으로 고정*/
+}
+@keyframes text1{
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+@keyframes exit_off{
+  0% {opacity: 0;}
+  45% {opacity: 0;}
+  50% {opacity: 1;}
+
+  100% {opacity: 1;}
+}
+/*box2 소식 제이쿼리*/
+#box2{
+  background: url(../images/2-b.jpg) no-repeat center top;
+  height: 918px;
+}
+.box2_inner{
+  width: 1320px;
+  height: 918px;
+  margin: auto;
+}
+.box2_1{
+  padding-top: 200px;
+}
+/*345 빽그라운드*/
+#b345-b{
+  background: url(../images/345-bg.jpg) no-repeat center top;
+  height: 2968px;
+}
+/*box3 인기상품*/
+.box3{
+  width: 1320px;
+  height: 920px;
+  margin: auto;
+}
+.box3_ul{
+  padding-top: 342px;
+}
+.box3_ul> li{
+  float: left;
+  width: 397px;
+  height: 525px; /*박스들사이즈지정*/
+  margin: 0px 15px 0px 15px;
+  border: 4px solid #5a5a5a;
+  text-align: center; /*글자가운대*/
+  position: relative;/*호버박스 기준*/
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.box3_ul> li> img{
+  width:100%; /*이미지 폭 100프로 박스에*/
+  height: 397px;
+}
+.box3_ul h3{
+  float: left;
+  color: #999999;
+  transition: all 1s;
+}
+.box3_ul .box3_h3_1{
+  padding: 13px 0px 20px 30px;
+  line-height: 42px;
+}
+.box3_ul .box3_h3_2{
+  padding: 42px 0px 0px 50px;
+  font-size: 58px;
+}
+.box3_ul .box3_h3_3{
+  padding: 42px 0px 0px 20px;
+  font-size: 35px;
+}
+.box3_ul p{
+  float: right;
+  padding-top: 45px;
+  padding-right: 30px;
+  font-size: 25px;
+  color: #999999;
+  transition: all 1s;
+}
+.box3 .box3_ul li a:hover h3{
+  color: #fff;
+}
+.box3 .box3_ul li a:hover p{
+  color: #fff;
+}
+.box3_ul .hover{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 397px;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: all 1s;
+}
+.box3 .hover ul li{
+  float: left;
+  padding: 20px;
+  padding-top: 200px;
+  padding-left: 30px;
+}
+.box3_ul li a:hover .hover{
+  opacity: 1;
+}
+/* box4 펀딩상품*/
+.box4{
+  width: 1320px;
+  height: 1092px;
+  margin: auto;
+  padding-top: 400px;
+  box-sizing: border-box;
+}
+.box4_left, .box4_right{
+  width: 575px;
+  height: 245px;
+  border: 4px solid #5a5a5a;
+  margin-bottom: 61px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.box4_left li{
+  float: left;
+  line-height: 54px;
+}
+.box4_right li{
+  float: left;
+  line-height: 50px;
+}
+.box4 p{
+  font-size: 22px;
+  padding: 10px 0px 0px 25px;
+  color: #999999;
+  transition: all 1s;
+}
+.box4 h1{
+  font-size: 29px;
+  padding-left: 25px;
+  color: #999999;
+  transition: all 1s;
+}
+.box4_left{
+  float: left;
+  margin-left: 45px;
+}
+.box4_right{
+  float: right;
+  margin-right: 45px;
+}
+.box4 .hover{
+  width: 240px;
+  height: 245px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+   transition: all 1s;
+}
+.box4 .hover h2{
+  padding-top: 60px;
+}
+.box4 a:hover .hover{
+  opacity: 1;
+}
+.box4 a:hover p{
+  color: #fff;
+}
+.box4 a:hover h1{
+  color: #fff;
+}
+/*box5 광고*/
+.box5{
+  width: 1320px;
+  height: 956px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+}
+.box5-img1{
+  margin-top: 192px;
+  border: 4px solid #5a5a5a;
+}
+.box5-img2{
+  position: absolute;
+  top: 80px;
+  right: 180px;
+}
+/*box6 구독*/
+.box6{
+  background: url(../images/6-bg.jpg) no-repeat center top;
+  height: 826px;
+  border-bottom: 3px solid #5a5a5a;
+}
+.box6_inner{
+  width: 1320px;
+  margin: auto;
+  text-align: center;
+  padding-top: 254px;
+}
+.box6_p{
+  margin-bottom: 45px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.box6_b{
+  margin: auto; /*div는 따로 마진오토 해줘야 가운대로감*/
+  width: 170px;
+  height: 4px;
+  background-color: #ffdd00;
+}
+.box6_h1{
+  margin: 65px;
+}
+.box6_text{
+  width: 245px;
+  height: 42px;
+  background-color: #5a5a5a;
+}
+.button{
+  background-color: #ffdd00;
+  color: #000;
+  font-weight: bold;
+  width: 110px;
+  height: 54px;
+  vertical-align: bottom; /*아래맡춤*/
+}
+input{
+  border: 1px solid #000;
+  color: #fff;
+  outline: 0;/*인풋을 클릭했을 때 나타나는 테두리*/
+  padding: 5px;
+  font-size: 20px;
+}
+input::placeholder{/*안내문구 꾸미기*/
+  color: #ffdd00;
+}
+/*footer*/
+#footer{
+  width: 1320px;
+  height: 317px;
+  margin: auto;
+  position: relative;
+}
+.footer_left{
+  float: left;
+  margin-left: 384px;
+  margin-top: 114px;
+}
+.footer_left li{
+  margin-right: 40px;
+  float: left;
+}
+.footer_right{
+  float: right;
+  margin-top: 114px;
+}
+.footer_right li{
+  float: left;
+  margin-left: 15px;
+}
+#footer p{
+  margin-left: 384px;
+  clear: both;
+  padding-top: 20px;
+  line-height: 40px;
+  font-size: 18px;
+  opacity: 0.7;
+}
+#footer .footer_logo{
+  position: absolute;
+  top: 124px;
+  left: 46px;
+  opacity: 1;
+}
+#footer .footer_left a, .footer_right a{
+  opacity: 0.7;
+}
+#footer a:hover{
+  opacity: 1;
+}
+/*footer 끝*/
